@@ -1,0 +1,23 @@
+{
+  "name": "template-app",
+  "title": "Template App",
+  "description": "...",
+  "$schema": "https://json.schemastore.org/youtrack-app.json",
+  "vendor": {
+    "name": "",
+    "url": ""
+  },
+  "icon": "icon.svg",
+  "widgets": [
+
+    {
+      "key": "sample-winget",
+      "name": "Sample-Winget",
+      "indexPath": "sample-winget/index.html",
+      "extensionPoint": "MAIN_MENU_ITEM",
+      "iconPath": "sample-winget/widget-icon.svg",
+      "description": "...",
+      "settingsSchemaPath": "src/settings.json"
+    }
+  ]
+}

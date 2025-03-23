@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "App Settings",
+    "description": "",
+    "properties": {
+    "booleanSetting": {
+            "type": "boolean",
+            "title": "Enable Feature",
+            "description": "A toggle to enable or disable the feature",
+            "x-scope": "global"
+        }
+    },
+    "required": ["booleanSetting"]
+}

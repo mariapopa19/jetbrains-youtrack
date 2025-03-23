@@ -1,0 +1,55 @@
+/* Base widget container */
+.widget {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--ring-unit) * 2);
+  margin: calc(var(--ring-unit) / 2);
+  padding: calc(var(--ring-unit) * 2);
+  background-color: var(--ring-content-background-color);
+  border-radius: var(--ring-border-radius);
+  box-shadow: var(--ring-shadow);
+}
+
+/* Header styling */
+.widget h3 {
+  font-size: var(--ring-font-size-lg);
+  font-weight: var(--ring-font-weight-bold);
+  color: var(--ring-primary-color);
+  margin-bottom: calc(var(--ring-unit) * 1.5);
+}
+
+/* Project list styling */
+.widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.widget li {
+  padding: calc(var(--ring-unit) / 2);
+  border: 1px solid var(--ring-border-color);
+  border-radius: var(--ring-border-radius);
+  background-color: var(--ring-secondary-background-color);
+  color: var(--ring-text-color);
+  font-size: var(--ring-font-size-md);
+  transition: background-color 0.2s ease;
+}
+
+.widget li:hover {
+  background-color: var(--ring-hover-background-color);
+}
+
+/* Toggle styling */
+.widget .ring-toggle {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--ring-unit) * 1);
+  font-size: var(--ring-font-size-md);
+  color: var(--ring-text-color);
+}
+
+/* Button styling (if used) */
+.widget .ring-button {
+  align-self: flex-start;
+  margin-top: calc(var(--ring-unit) * 2);
+}
