@@ -3,20 +3,18 @@ import './app.css';
 import React, {memo, useCallback, useEffect, useState} from 'react';
 import Toggle from '@jetbrains/ring-ui-built/components/toggle/toggle';
 
-// Define the project type
+
 interface Project {
   id: string;
   name: string;
 }
 
-// Register widget in YouTrack
 const host = await YTApp.register();
 
 const AppComponent: React.FunctionComponent = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [flag, setFlag] = useState<boolean>(false);
 
-  // Fetch projects from the YouTrack API
   const fetchProjects = useCallback(async (): Promise<void> => {
     try {
       const result = await host.fetchYouTrack<Project[]>('admin/projects', {
@@ -29,7 +27,6 @@ const AppComponent: React.FunctionComponent = () => {
     }
   }, []);
 
-  // Load the boolean flag from the backend
   const loadFlag = useCallback(async (): Promise<void> => {
     try {
       const result = await host.fetchApp<{ booleanSetting: boolean }>('backend/flag');
@@ -39,7 +36,6 @@ const AppComponent: React.FunctionComponent = () => {
     }
   }, []);
 
-  // Save the boolean flag to the backend
   const saveFlag = useCallback(async (newFlag: boolean): Promise<void> => {
     try {
       await host.fetchApp('backend/flag', {
@@ -52,7 +48,6 @@ const AppComponent: React.FunctionComponent = () => {
     }
   }, []);
 
-  // Fetch projects and load the flag on component mount
   useEffect(() => {
     fetchProjects();
     loadFlag();
